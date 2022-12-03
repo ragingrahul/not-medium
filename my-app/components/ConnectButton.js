@@ -27,7 +27,7 @@ export function ConnectButton(){
                 break;
             
             default:
-                console.log("Couldn't connect to Ceramix:",res.error.message)
+                console.log("Couldn't connect to Ceramic:",res.error.message)
                 setStatus(3)    
                 
                 await sleep(2000)
@@ -64,8 +64,8 @@ export function ConnectButton(){
                 <button
                     type="button"
                     onClick={connect}
-                    className="flex flex-row justify-center items-center mx-5 bg-[#2952e3] p-3 px-5 rounded-full cursor-pointer hover:bg-[#2546bd]">
-                    <p className="text-white text-base font-semibold">Connect</p>
+                    className="flex flex-row justify-center items-center border-2 border-black p-3 px-5 rounded-full cursor-pointer hover:bg-gray-300">
+                    <p className=" text-base font-semibold">Connect</p>
                 </button>
             )
         
@@ -73,8 +73,8 @@ export function ConnectButton(){
             return(
                 <button
                     type="button"
-                    className="flex flex-row justify-center items-center mx-5 p-3 px-5 rounded-full cursor-pointer bg-[#2546bd]">
-                    <p className="text-white text-base font-semibold">Loading...</p>
+                    className="flex flex-row justify-center items-center border-2 border-black p-3 px-5 rounded-full cursor-pointer hover:bg-gray-300">
+                    <p className=" text-base font-semibold">Loading...</p>
                 </button>
             )
 
@@ -82,7 +82,7 @@ export function ConnectButton(){
             console.log("user",user)
             return(
                 <div className="flex flex-row">
-                    <button className="flex flex-row justify-center items-center mx-5 p-3 px-5 rounded-lg cursor-pointer bg-[#2b77ff]">
+                    <button className="flex flex-row justify-center items-center mx-5 p-3 px-5 rounded-full cursor-pointer border-2 border-black ">
                         {user.profile?.username?
                             <div className="flex">
                                 {
@@ -91,7 +91,7 @@ export function ConnectButton(){
                                         :
                                         <Image src='/defaultPFP.jpeg' width='20' height='20' className="rounded-full" alt="profile picture" />                               
                                 }
-                                <div>{user.profile.username}</div>
+                                <div className="text-base font-semibold mx-1">{user.profile.username}</div>
                             </div>
                             :
                             <div className="flex">
@@ -100,8 +100,8 @@ export function ConnectButton(){
                             </div>
                         }
                     </button>
-                    <button onClick={logout} className="flex flex-row justify-center items-center  bg-[#2952e3] p-3 px-5 rounded-full cursor-pointer hover:bg-[#2546bd]">
-                        Logout
+                    <button onClick={logout} className="flex flex-row justify-center items-center border-2 border-black p-3 px-5 rounded-full cursor-pointer hover:bg-gray-300">
+                    <p className="text-base font-semibold">Logout</p>
                     </button>
                 </div>
             )
